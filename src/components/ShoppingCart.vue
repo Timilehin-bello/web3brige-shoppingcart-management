@@ -4,7 +4,7 @@
     <ul id="cartItems">
       <li v-for="item in cartStore.cart" :key="item.id" class="cartItem">
         <div class="cartItemDetails">
-          <img :src="`./src/assets/${item.image}`" alt="Product Image" class="cartItemImage" />
+          <img :src="`./${item.image}`" alt="Product Image" class="cartItemImage" />
           <div class="cartItemInfo">
             <span>{{ item.name }}</span>
             <div>

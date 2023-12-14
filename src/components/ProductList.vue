@@ -2,7 +2,7 @@
   <div class="productsContainer">
     <div v-for="product in cartStore.products" :key="product.id" class="productCard">
       <h4>{{ product.name }}</h4>
-      <img :src="`./src/assets/${product.image}`" alt="Product Image" class="product-image" />
+      <img :src="`./${product.image}`" alt="Product Image" class="product-image" />
       <p>${{ product.amount.toFixed(2) }}</p>
       <button @click="addToCart(product.id)">Add to Cart</button>
     </div>
