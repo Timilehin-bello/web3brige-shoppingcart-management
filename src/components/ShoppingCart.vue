@@ -82,28 +82,26 @@ export default {
 
 <style scoped>
 .cartContainer {
-  /* Styles for cart container */
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
 }
 
 .cartItem {
-  /* Styles for each cart item */
   display: flex;
   align-items: center;
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ccc;
+  flex-wrap: wrap;
 }
-
 .cartItemDetails {
   display: flex;
   align-items: center;
+  flex-basis: 100%;
 }
 
 .cartItemImage {
-  /* Styles for cart item image */
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -111,61 +109,58 @@ export default {
 }
 
 .cartItemInfo {
-  /* Styles for cart item info */
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
-.cartItemInfo span {
-  /* Styles for cart item name */
-  font-weight: bold;
-}
-
-.cartItemInfo div {
-  /* Styles for quantity buttons */
-  display: flex;
-  align-items: center;
-}
-
-.cartItemInfo button {
-  /* Styles for quantity buttons */
-  margin: 0 5px;
-  padding: 5px 10px;
-  border: none;
-  background-color: #ccc;
-  color: #fff;
-  cursor: pointer;
+.cartItemTotal {
+  flex-basis: 100%;
+  text-align: right;
+  margin-top: 10px;
 }
 
 .couponSection {
-  /* Styles for coupon section */
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.couponSection label {
-  /* Styles for coupon label */
-  margin-right: 10px;
-}
-
-.couponSection input {
-  /* Styles for coupon input */
-  padding: 5px;
-  border: 1px solid #ccc;
-}
-
+.couponSection label,
+.couponSection input,
 .couponSection button {
-  /* Styles for apply coupon button */
-  margin-left: 10px;
-  padding: 5px 10px;
-  border: none;
-  background-color: #ccc;
-  color: #fff;
-  cursor: pointer;
+  flex: 1 100%;
 }
 
-.totalAmount {
-  /* Styles for total amount */
-  margin-top: 20px;
-  font-weight: bold;
+/* Media Queries */
+@media (min-width: 768px) {
+  .cartContainer {
+    max-width: 600px;
+  }
+
+  .cartItemDetails {
+    flex-basis: auto;
+  }
+
+  .cartItemTotal {
+    flex-basis: auto;
+  }
+
+  .couponSection label,
+  .couponSection input,
+  .couponSection button {
+    flex: 1 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .cartItemInfo button,
+  .couponSection button {
+    padding: 10px 15px;
+  }
+
+  .couponSection input {
+    padding: 10px;
+  }
 }
 </style>
